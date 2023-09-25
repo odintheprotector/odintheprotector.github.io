@@ -1,13 +1,10 @@
-title: dash
+title: odintheprotector
 author: GitHub User
-email: miguel-gonzalez@gmx.de
 description: > # this means to ignore newlines until "show_exerpts:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  An incident responder who's seeking opportunities to work in technology company!
 show_excerpts: false # set to true to show excerpts on the homepage
 
-paginate: 1
+paginate: 5
 paginate_path: "/blog/page:num/"
 
 tag_permalink_style: pretty
@@ -27,13 +24,13 @@ dash:
   # generate social links in footer
   # supported colors: green, red, orange, blue, cyan, pink, teal, yellow, indigo, purple
   social_links:
-    - url: https://twitter.com/bitbrain_
+    - url: https://twitter.com/Odinx12345
       icon: twitter-square
       color: cyan
-    - url: https://bitbrain.itch.io
-      icon: itch-io
-      color: red
-    - url: https://github.com/bitbrain
+    - url: https://facebook.com/d4ngn3
+      icon: facebook-square
+      color: blue
+    - url: https://github.com/odintheprotector
       icon: github-square
       color: purple
 
@@ -49,11 +46,11 @@ dash:
   # Replaces the default avatar provider (gravatar)
   #avatar_source: github
   #github_username: bitbrain
-  #avatar_source: local
-  #avatar_path: /assets/avatar.png
+  avatar_source: local
+  avatar_path: /assets/avatar.jpg
 
 # Build settings
-theme: jekyll-dash
+remote_theme: bitbrain/jekyll-dash@v2.4.1
 
 plugins:
  - jekyll-feed
@@ -61,3 +58,4 @@ plugins:
  - jekyll-paginate
  - liquid-md5
  - jekyll/tagging
+ - jekyll-remote-theme
