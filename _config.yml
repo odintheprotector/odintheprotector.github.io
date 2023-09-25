@@ -1,5 +1,5 @@
 title: odintheprotector
-author: GitHub User
+author: Odin
 description: > # this means to ignore newlines until "show_exerpts:"
   An incident responder who's seeking opportunities to work in technology company!
 show_excerpts: false # set to true to show excerpts on the homepage
@@ -18,9 +18,6 @@ dash:
   date_format: "%b %-d, %Y"
 
   # (optional) discqus comment configuration
-  disqus:
-    shortname: bitbrain-github-io
-
   # generate social links in footer
   # supported colors: green, red, orange, blue, cyan, pink, teal, yellow, indigo, purple
   social_links:
