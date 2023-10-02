@@ -27,15 +27,7 @@ jobs:
       - name: 🔖Build tag
         if: ${{ steps.tag-check.outputs.exists == 'false' }}
         id: tag_version
-        #uses: mathieudutour/github-tag-action@v5.6
-        #with:
-          #github_token: ${{ secrets.GH_CREDENTIALS }}
-          #default_bump: false
-          #custom_tag:  ${{ steps.gemspec_fetch.outputs.version }}
-          #tag_prefix: v
-        # You may pin to the exact commit or the version.
-        # uses: razor54/build-and-tag-action@874b15f5299998c346ba79128a88abd4d6c1b101
-        uses: razor54/build-and-tag-action@v2.1.2
+        uses: mathieudutour/github-tag-action@v6.1
         with:
           github_token: ${{ secrets.GH_CREDENTIALS }}
           default_bump: false
