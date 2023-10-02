@@ -18,11 +18,11 @@ jobs:
         with:
           specfile: jekyll-dash.gemspec
       - name: 🕵️‍♂️ investigate if tag exists
-        uses: mukunku/tag-exists-action@v1.0.0
+        uses: mukunku/tag-exists-action@v1.4.0
         id: tag-check
-        with: 
+        env: #with
           tag: 'v${{ steps.gemspec_fetch.outputs.version }}'
-        env:
+        #env:
           GITHUB_TOKEN: ${{ secrets.GH_CREDENTIALS }}
       - name: 🔖Build tag
         if: ${{ steps.tag-check.outputs.exists == 'false' }}
