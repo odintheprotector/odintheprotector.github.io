@@ -1,0 +1,21 @@
+language: ruby
+cache: bundler
+branches:
+  only:
+  - main
+before_install:
+- gem install bundler -v 2.2.34
+script:
+  - JEKYLL_ENV=production bundle exec jekyll build --destination site
+deploy:
+  repo: odintheprotector/odintheprotector.github.io
+  provider: pages
+  local-dir: ./site
+  target-branch: main
+  email: deploy@travis-ci.org
+  name: Deployment Bot
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  keep-history: true
+  on:
+    branch: main
