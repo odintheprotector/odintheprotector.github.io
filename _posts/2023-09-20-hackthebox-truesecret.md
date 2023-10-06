@@ -2,7 +2,7 @@
 layout: post
 title: HackTheBox - TrueSecrets
 description: Memory forensic, encryption
-tags: ["HackTheBox", "Writeup", "TrueCrypt", "Volatility", "Memory Forensic"]
+tags: [HackTheBox, Writeup, TrueCrypt, Volatility, Memory Forensic]
 ---
 Hi, after I've spent a long time for English test, finally I have time to post my CTF writeup. Continuing with HackTheBox,
 now it's a memory challenge as title. First, I check memory profile: ![]({{site.url}}/assets/images/TrueSecrets/1.png)

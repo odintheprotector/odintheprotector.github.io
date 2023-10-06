@@ -2,7 +2,7 @@
 layout: post
 title: HackTheBox - Reminiscent
 description: Memory forensic problem
-tags: ["HackTheBox", "Writeup", "Memory Forensic", "Email forensic", "Volatility"]
+tags: [HackTheBox, Writeup, Memory Forensic, Email forensic, Volatility]
 ---
 
 CHALLENGE DESCRIPTION

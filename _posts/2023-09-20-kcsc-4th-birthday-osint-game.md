@@ -2,7 +2,7 @@
 layout: post
 title: KCSC - 4th Birthday OSINT game
 description: OSINT problem - 4th KCSC Birthday 
-tags: ["KCSC", "Writeup", "OSINT"]
+tags: [KCSC, Writeup, OSINT]
 ---
 
 Hi everyone, just a few day ago, KCSC created a OSINT challenge because of its 4th birthday. Fortunately, I solved this challenge, and today
@@ -31,7 +31,7 @@ For that, I continued searching by accessing commit history where editting histo
 I was sure that there's the thing that I was finding. Download it and unzip, but there's an error: **unsupported compression method 99**. This
 error appears because compression method 99 error indicates the AES (Adavance Encryption Standard) encryption and unfortunately, this encryption standard is currently not supported by unzip binary. However, we can use 7z to unzip the file. But when unzipping, it needs password. So where we find password now?
 
-Look into the profile, there's a [X profile](https://twitter.com/anokflexer){:target="_blank"}{:rel="noopener noreferrer"}. I accessed it, after searching, there's nothing interest. I go to followers, there's a user named **ricon** and in the newest post, in this pic, there's a paper which has suspicious strings, take a closer look, I can see there're some strings: "echo", "pass", "KCSC08082019". And maybe "KCSC08082019" is the password of .zip file. Trying to enter and boom, I opened the file and get the real flag!!
+Look into the profile, there's a [X profile](https://twitter.com/anokflexer){:target= _blank }{:rel= noopener noreferrer }. I accessed it, after searching, there's nothing interest. I go to followers, there's a user named **ricon** and in the newest post, in this pic, there's a paper which has suspicious strings, take a closer look, I can see there're some strings:  echo pass KCSC08082019 . And maybe  KCSC08082019  is the password of .zip file. Trying to enter and boom, I opened the file and get the real flag!!
 
 ![]({{site.url}}/assets/images/KCSCbirthday/image4.png)
 
