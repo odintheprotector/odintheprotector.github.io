@@ -27,6 +27,6 @@ I've tried to download the file, it returned a empty page, inspect it, I got a p
 
 There're so many base64 string, I tried to the first one, decode it:
 
-![]({{site.url}}/assets/images/diagnostic/Screenshot_2023-08-04_08_04_39.png)
+![]({{site.url}}/assets/images/diagnostic/Screenshot_2023-08-04_08_09_43.png)
 
 Notice to file variable, we can realize that if we combine it together, we'll get the flag!
