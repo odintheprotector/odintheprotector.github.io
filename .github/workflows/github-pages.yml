@@ -20,4 +20,4 @@ jobs:
             ${{ runner.os }}-gems-v2
       - uses: helaili/jekyll-action@v2
         env:
-          token: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
