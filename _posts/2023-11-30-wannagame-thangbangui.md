@@ -112,7 +112,7 @@ Now let's analyze that file. As we can see in the source, there are 2 main funct
 - Exfil function: Use that IP to send ICMP packet and each byte in ICMP has been encrypted with XOR algorithm which use "0xfa" as the key to encrypt 
 and in other parts, they will encode all datas in base64 format. 
 
-Follow the workspace, it has the order: XOR - Base64 - Gzip
+Follow the workflow, it has the order: XOR - Base64 - Gzip
 - First, I've extracted all ICMP data and remove all duplicated strings and all bytes which stand for "Completed!":
 
 ```
