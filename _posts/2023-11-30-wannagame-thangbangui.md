@@ -5,7 +5,7 @@ description: Browser history forensic
 tags: [WannaGame, Writeup, Powershell, Wireshark ]
 ---
 
-Link challenge: https://drive.google.com/drive/folders/1vlr_l_4v-KXZORsj5HPfCIVGfpa_kD4x
+Link challenge: [Click here to get the link](https://drive.google.com/drive/folders/1vlr_l_4v-KXZORsj5HPfCIVGfpa_kD4x)
 
 Hi everyone, after a long time I've not done anything in my blog, now I will share you a challenge that I think it's very interesting and very fun for anyone who want to become an incident responder or just want to learn new things. OK, so let's start!
 
