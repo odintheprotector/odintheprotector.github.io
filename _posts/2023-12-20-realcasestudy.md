@@ -110,7 +110,7 @@ This is the source code of PHP file, but you can see inside it it's JavaScript, 
 4. Cookie Manipulation:
 - It creates a new cookie  named "cjs" with a value of "t" and an expiration time st to 15 seconds from the current time.
 5. Conditional Logic:
-- Check if the cookie "uid_id2" exists and extrats its value to set the "uuid" field in the form. If successful, it triggers a redirection (**'redirect()'** function). If not, it tries to send a GET request to "https://proftrafficcounter.com/stats" to gather the UUID.
+- Check if the cookie "uid_id2" exists and extracts its value to set the "uuid" field in the form. If successful, it triggers a redirection (**'redirect()'** function). If not, it tries to send a GET request to "https://proftrafficcounter.com/stats" to gather the UUID.
 6. XHR Requests:
 - It attempts to make an XMLHttpRequest to a remote server to retrieve data. On a successful response, it extracts information and triggers a redirection.
 7. Error Handling:
@@ -118,7 +118,7 @@ This is the source code of PHP file, but you can see inside it it's JavaScript, 
 8. Functions:
 - There are serveral helper functions defined within the script toset values in the form and trigger form submission.
 
-After analysing, I'm sure that these codes will steal user's sensitive data. Moreover, let's return to previous image and you notice that when I downloaded files, the first domain wasn't the source of file, instead it's **ringerbaseballsilk.com**. Check it with Virustotal and I saw that it's the C2 server of some Android malwares:<br>
+Moreover, let's return to previous image and you notice that when I downloaded files, the first domain wasn't the source of file, instead it's **ringerbaseballsilk.com**. Check it with Virustotal and I saw that it's the C2 server of some Android malwares:
 ![]({{site.url}}/assets/images/casestudy/5.png)<br>
 
-Conclusion, this is the phishing link and I hope everyone will announce to all people around you to help them prevent from it. Thank you very much for reading my blog, if you have any questions about my post, please contact me through Facebook which I attached in home page. Have a good day, peace!
+Conclusion, after analysing, I can be sure that this is the phishing link and I hope everyone will announce to all people around you to help them prevent from it. Thank you very much for reading my blog, if you have any questions about my post, please contact me through Facebook which I attached in home page. Have a good day, peace!
