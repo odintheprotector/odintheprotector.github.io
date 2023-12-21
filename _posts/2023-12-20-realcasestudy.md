@@ -118,7 +118,7 @@ This is the source code of PHP file, but you can see inside it it's JavaScript, 
 8. Functions:
 - There are serveral helper functions defined within the script toset values in the form and trigger form submission.
 
-Moreover, let's return to previous image and you notice that when I downloaded files, the first domain wasn't the source of file, instead it's **ringerbaseballsilk.com**. Check it with Virustotal and I saw that it's the C2 server of some Android malwares:
+Moreover, let's return to previous image and you notice that when I downloaded files, the first domain wasn't the source of file, instead it's **ringerbaseballsilk.com**. Check it with Virustotal and I saw that it's the C2 server of some Android malwares:<br>
 ![]({{site.url}}/assets/images/casestudy/5.png)<br>
 
 Conclusion, after analysing, I can be sure that this is the phishing link and I hope everyone will announce to all people around you to help them prevent from it. Thank you very much for reading my blog, if you have any questions about my post, please contact me through Facebook which I attached in home page. Have a good day, peace!
