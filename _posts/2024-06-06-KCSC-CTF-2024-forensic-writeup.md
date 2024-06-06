@@ -20,11 +20,6 @@ việc thực thi các tác vụ tự động, và kẻ xấu có thể chỉnh 
 
 Đầu tiên, mình sử dụng **olevba.py** để extract toàn bộ VBA code:
 
-<details>
-<summary>
-	VBA code nè
-</summary>
-	
 ```
 Function zzz(troll As String) As String
     Dim aaa As String
@@ -105,7 +100,6 @@ ceo.Run """" + namae + """" + nifal
 ActiveDocument.Save
 End Sub
 ```
-</details>
 
 Mình sẽ đi sơ qua về các function trong đống VBA này nha: 
 - Với zzz() chúng ta có ba biến là aaa, bbb, ccc với aaa là kết quả của troll sau khi được tách ra thành các byte riêng biệt, bbb có giá trị là 1337 (các bạn có thể thấy ở trên là 4444 nhưng khi mình mở file lần nữa thì nó là 1337, khum biết nó là kĩ thuật gì nhưng mà thực sự nhìn cũng hay hay 😊😊😊) và ccc chính là kết quả sau khi xor chuỗi aaa với key là 1337. Đến đây mình viết luôn script nho nhỏ để decode xem nó ra cái gì:
