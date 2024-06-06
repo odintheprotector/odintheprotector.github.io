@@ -1,3 +1,10 @@
+---
+layout: post
+title: BYUCTF 2024 - Forensic 
+description: All solved forensic challenges
+tags: [BYUCTF, Writeup, Forensic, DFIR]
+---
+
 Hi everyone, I just joined BYUCTF two days ago and till now I feel very happy because I solved 5/6 forensic challenges here. Below is my writeup, let's go: 
 
 ![image](https://github.com/odintheprotector/BYUCTF-2024/assets/75618225/e25d90b1-fd3c-4d94-a98d-880b297bae00)
