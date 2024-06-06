@@ -1,7 +1,7 @@
 ---
 layout: post
 title: KCSC CTF 2024 - Forensic
-description: Command and Control server problem
+description: All solved forensic challenges
 tags: [KCSC, Writeup, Forensic, DFIR]
 ---
 
