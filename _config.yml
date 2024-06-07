@@ -49,7 +49,7 @@ dash:
   avatar_path: /assets/avatar.jpg
 
 # Build settings
-remote_theme: bitbrain/jekyll-dash@v2.4.1
+theme: jekyll-dash
 
 plugins:
  - jekyll-feed
@@ -57,4 +57,3 @@ plugins:
  - jekyll-paginate
  - liquid-md5
  - jekyll/tagging
- - jekyll-remote-theme
