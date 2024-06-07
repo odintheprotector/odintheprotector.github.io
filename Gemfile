@@ -1,7 +1,12 @@
 source "https://rubygems.org"
 
+gem 'jekyll-dash', '~> 1'
 gem "liquid-md5"
 gem "jekyll-tagging"
 gem "kramdown-parser-gfm"
-gem "jekyll-remote-theme"
-gemspec
+
+#gemspec
+
+gem "webrick", "~> 1.8"
+gem 'jekyll-livereload'
+gem 'thin' 
