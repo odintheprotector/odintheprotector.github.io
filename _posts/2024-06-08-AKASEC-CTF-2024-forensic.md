@@ -277,3 +277,261 @@ The fastest way to read this file is use **strings** 😂😂😂 and you will f
 ![image](https://github.com/odintheprotector/AKASEC-CTF-2024/assets/75618225/5fc68d1b-661e-40f4-b7c8-249a017224b0)
 
 **Flag: AKASEC{V0L4T1L1TY_f0r_chr0m3_s34rc$h_h1st0ry}**
+
+### snooz
+
+I have to say this challenge is great in my opinion. If you want to know how it's great, let's solve this challenge. In this challenge they gave us 2 files: a memory file and a pcapng file. Let's start with pcapng file: 
+
+![image](https://github.com/odintheprotector/odintheprotector.github.io/assets/75618225/8560b3a2-1576-4875-9c19-f0895ea0c737)
+
+You can see that there're many packets between local and port 8000, watch stream of it, I saw some downloading actions in stream 3 and 6. From that I tried to extract these files: 
+
+![image](https://github.com/odintheprotector/odintheprotector.github.io/assets/75618225/d8ee5b58-f622-4e28-a402-a9f7c555556b)
+
+The most suspicious file I noticed it's **download.dat**. Read this file and I found that it was base64 string and when I decoded it, it's a exe file packed by .NET:
+
+![image](https://github.com/odintheprotector/odintheprotector.github.io/assets/75618225/ab8f93b8-7e05-46d0-9579-515da8a51991)
+
+Again, we can use dnSpy for reversing it: 
+
+- In function a, it established connection with port 1337 and transfer data through it
+
+```
+	private static void a()
+	{
+		TcpListener tcpListener = new TcpListener(IPAddress.Any, 1337);
+		<Module>.l = -1592258590;
+		TcpListener tcpListener2 = tcpListener;
+		object obj = null;
+		object e = 1386028750;
+		<Module>.o = 2136656571;
+		<Module>.e = e;
+		<Module>.a = obj;
+		tcpListener2.Start();
+		bool flag;
+		<Module>.h = flag;
+		for (;;)
+		{
+			flag = true;
+			<Module>.k = 1987339265;
+			<Module>.a = null;
+			<Module>.g = flag;
+			int num;
+			<Module>.p = num;
+			<Module>.r = -1051365525;
+			NetworkStream stream;
+			global::b.a = stream;
+			TcpClient tcpClient = tcpListener.AcceptTcpClient();
+			<Module>.i = 1057425350;
+			stream = tcpClient.GetStream();
+			byte[] array = new byte[1024];
+			<Module>.e = null;
+			byte[] array2 = array;
+			<Module>.i = -1411494653;
+			Stream stream2 = stream;
+			byte[] buffer = array2;
+			int offset = 0;
+			<Module>.k = 1657774894;
+			<Module>.q = 744302617;
+			num = stream2.Read(buffer, offset, array2.Length);
+			byte[] array3 = new byte[num];
+			Array sourceArray = array2;
+			int sourceIndex = 0;
+			Array destinationArray = array3;
+			int num2;
+			int num3;
+			int n;
+			if ((4062 & -5420 + (num << 11)) == 0)
+			{
+				num2 = checked(2069871130 + -132655268);
+				num3 = num2;
+			}
+			else
+			{
+				uint num4 = (uint)(4 & (num + num * 15 ^ 1587));
+				uint num5 = 4U;
+				n = <Module>.n;
+				num3 = ((num4 != (num5 & (uint)((uint)n << 8) >> 5)) ? checked((int)(unchecked((long)(-2076188109 ^ 422676110)))) : (sizeof(long) + 17256));
+			}
+			<Module>.d = <Module>.c(num3, sizeof(Guid) + 18172, sizeof(float) + 107);
+			Array.Copy(sourceArray, sourceIndex, destinationArray, 0, num);
+			<Module>.n = -1040838703;
+			<Module>.d = num;
+			byte[] array4 = array3;
+			int num6 = (((uint)(7364 + (num2 << 29)) >> 29 & 2U) == (uint)(~num2 - 2958 & 2)) ? (((((uint)(n * -1073741824) >> 10 ^ (uint)(n * 57 + 7 * n)) & 57U) == 0U) ? (Type.EmptyTypes.Length + 45957) : (Type.EmptyTypes.Length + 695708289)) : (-1673074294 ^ 37606627);
+			int num7 = checked(-1218841169 + 1218888041);
+			int num8;
+			if (num / 16039 == -1845109675)
+			{
+				int o = <Module>.o;
+				num8 = ((o * 12966 - -131 != (int)((uint)(o % 256 / 1972) >> 23)) ? (Type.EmptyTypes.Length + -884098835) : (Type.EmptyTypes.Length + 1457581078));
+			}
+			else
+			{
+				int num9 = 5009;
+				int q = <Module>.q;
+				num8 = ((num9 + (q << 20) + 483840 == (int)((uint)(~(uint)(q * 1073741824)) >> 17)) ? (Type.EmptyTypes.Length + -1963321438) : (Type.EmptyTypes.Length + 182));
+			}
+			byte[] array5 = global::a.b(array4, <Module>.c(num6, num7, num8));
+			<Module>.e = null;
+			Encoding utf = Encoding.UTF8;
+			byte[] bytes = global::a.c(array5);
+			<Module>.r = 2097519326;
+			<Module>.d = <Module>.c(checked((int)44666.0), sizeof(int) + 45636, Type.EmptyTypes.Length + 219);
+			string @string = utf.GetString(bytes);
+			int num10 = sizeof(double) + 21715;
+			int num11 = checked((int)22728L);
+			string str = <Module>.c(num10, num11, sizeof(Guid) + 95);
+			<Module>.i = 1503776956;
+			Console.WriteLine(str + @string);
+			global::b.b = 1952428595;
+			tcpClient.Close();
+			<Module>.k = -1529522494;
+		}
+	}
+```
+
+- In function b, it used AES to encrypt data:
+
+```
+	private static byte[] b(byte[] A_0, string A_1)
+	{
+		Aes aes = Aes.Create();
+		byte[] result;
+		try
+		{
+			<Module>.i = 2081625616;
+			SymmetricAlgorithm symmetricAlgorithm = aes;
+			Encoding utf = Encoding.UTF8;
+			int r = -1871252905;
+			<Module>.m = -1437277352;
+			<Module>.r = r;
+			symmetricAlgorithm.Key = utf.GetBytes(A_1);
+			SymmetricAlgorithm symmetricAlgorithm2 = aes;
+			CipherMode mode = 2;
+			<Module>.q = -1852116043;
+			<Module>.e = null;
+			symmetricAlgorithm2.Mode = mode;
+			<Module>.l = -1410905245;
+			ICryptoTransform cryptoTransform;
+			object c = cryptoTransform;
+			<Module>.k = 1845842485;
+			<Module>.c = c;
+			SymmetricAlgorithm symmetricAlgorithm3 = aes;
+			PaddingMode padding = 1;
+			object h = null;
+			<Module>.b = null;
+			<Module>.h = h;
+			object d = <Module>.c(Type.EmptyTypes.Length + 8801, sizeof(uint) + 9765, sizeof(float) + 89);
+			bool flag;
+			<Module>.d = flag;
+			<Module>.d = d;
+			symmetricAlgorithm3.Padding = padding;
+			<Module>.i = 1308380089;
+			ICryptoTransform cryptoTransform2 = aes.CreateDecryptor();
+			<Module>.m = -1557401652;
+			cryptoTransform = cryptoTransform2;
+			try
+			{
+				<Module>.p = 1203310366;
+				ICryptoTransform cryptoTransform3 = cryptoTransform;
+				int num = 0;
+				object obj = aes;
+				<Module>.o = -2051646939;
+				global::b.b = obj;
+				result = cryptoTransform3.TransformFinalBlock(A_0, num, A_0.Length);
+			}
+			finally
+			{
+				ICryptoTransform cryptoTransform4 = cryptoTransform;
+				object obj2 = null;
+				<Module>.a = result;
+				global::b.b = 1876936332;
+				flag = (cryptoTransform4 == obj2);
+				if (!flag)
+				{
+					cryptoTransform.Dispose();
+				}
+				<Module>.o = -1978466511;
+			}
+		}
+		finally
+		{
+			ICryptoTransform cryptoTransform;
+			object c2 = cryptoTransform;
+			object obj3 = null;
+			<Module>.n = -1932913121;
+			<Module>.a = obj3;
+			<Module>.f = 1957620381;
+			<Module>.c = c2;
+			<Module>.q = -1950879357;
+			Aes aes2 = aes;
+			object obj4 = null;
+			object h2 = aes;
+			bool flag;
+			<Module>.a = flag;
+			<Module>.h = h2;
+			global::b.b = obj4;
+			object obj5 = null;
+			object h3 = null;
+			<Module>.r = 1809257038;
+			<Module>.h = h3;
+			global::b.a = cryptoTransform;
+			<Module>.i = -563903361;
+			flag = (aes2 == obj5);
+			<Module>.f = 1818084011;
+			if (!flag)
+			{
+				aes.Dispose();
+			}
+		}
+		<Module>.m = 796469985;
+		<Module>.o = -1980982856;
+		return result;
+	}
+
+```
+Now we will return to pcapng file to find data was transfered through port 1337: 
+
+![image](https://github.com/odintheprotector/odintheprotector.github.io/assets/75618225/08458f4a-01ad-4a69-82fc-afd0501b07a1)
+
+![image](https://github.com/odintheprotector/odintheprotector.github.io/assets/75618225/9bb48e03-99c3-4192-a86a-4795c800e981)
+
+Import it to CyberChef with key is **fr33___p4l3571n3** (in source code) and mode is ECB: 
+
+![image](https://github.com/odintheprotector/odintheprotector.github.io/assets/75618225/dc901280-54d1-4601-9f42-cd79cba861cb)
+
+You can see that they mentioned something about pastecode, so I decided to string the memory (becuz I'm lazy):
+
+![image](https://github.com/odintheprotector/odintheprotector.github.io/assets/75618225/fa568241-3367-41ad-9fe6-8af3cdade3ce)
+
+Open this link, you will see it's protected and we just type the password we found and we can read the content: 
+
+![image](https://github.com/odintheprotector/odintheprotector.github.io/assets/75618225/0a3816ce-0756-47c4-8250-b3be5620a1b8)
+
+It's base64 string, so I decoded it, saved it in a file and I found that it's zip file protected by password: 
+
+![image](https://github.com/odintheprotector/odintheprotector.github.io/assets/75618225/fdd2e481-47bc-4f79-837d-44728576d979)
+
+Now we need to use memdump for more clues, I extracted processes list inside the memory: 
+
+![image](https://github.com/odintheprotector/odintheprotector.github.io/assets/75618225/fedcbbc6-d479-46ba-9e0e-ca0bd46c6db0)
+
+Look for a long time and I found a notepad process was running, so I will use GIMP method to watch the screen at that moment (I wrote a writeup about it, you can check in MireaCTF) and I really found password for zip file: 
+
+![image](https://github.com/odintheprotector/odintheprotector.github.io/assets/75618225/bc9cd852-80cd-4bba-bb02-20b17965d6ff)
+
+Open it and you will get an image (tired...):
+
+![image](https://github.com/odintheprotector/odintheprotector.github.io/assets/75618225/7cd9c919-7042-41f0-b80d-dd9893d0bcf9)
+
+![image](https://github.com/odintheprotector/odintheprotector.github.io/assets/75618225/47de6bce-575d-4d9f-a71c-fb60ad058180)
+
+It's not the flag... and from here I tried to use stegseek and I really found flag here!!!!!!!!!!!!!!!!!!! (so happy): 
+
+![image](https://github.com/odintheprotector/odintheprotector.github.io/assets/75618225/9bc8a57a-30ec-468a-b267-e93022bb5ac1)
+
+![image](https://github.com/odintheprotector/odintheprotector.github.io/assets/75618225/f105f40f-d63e-4352-b42c-a234a03a174d)
+
+
+
