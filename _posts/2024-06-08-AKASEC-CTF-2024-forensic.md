@@ -5,9 +5,7 @@ description: My writeup for all forensic challenges
 tags: [AKASEC, Writeup, Forensic, Virustotal, Powershell, DFIR, Memory Forensic, Word, CTFtime, DES3 decrypt, Blue Team, Volatility, Wireshark]
 ---
 
-Hi everyone, this time me and World Wide Flags have joined AKASEC CTF, and fortunately, I solved all forensic challenges there and we're in 3rd place. Because I'm lazy so I just write some challenges that I think it's good with me. Let's go! 
-
-![image](https://github.com/odintheprotector/odintheprotector.github.io/assets/75618225/3a21484f-8e23-462b-9f7b-97339b3ea47e)
+Hi everyone, this time me and World Wide Flags have joined AKASEC CTF, and fortunately, I solved all forensic challenges by myself (because noobthebox solved them too fast) and we're in 3rd place. Because I'm lazy so I just write some challenges that I think it's good with me. Let's go! 
 
 ![image](https://github.com/odintheprotector/odintheprotector.github.io/assets/75618225/9f6bb534-54c7-4952-8d6f-8bf8b0fc3061)
 
