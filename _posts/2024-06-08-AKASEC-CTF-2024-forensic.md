@@ -1,7 +1,7 @@
 ---
 layout: post
 title: AKASEC CTF 2024
-description: My writeup for all forensic challenges
+description: My writeup for forensic challenges
 tags: [AKASEC, Writeup, Forensic, Virustotal, Powershell, DFIR, Memory Forensic, Word, CTFtime, DES3 decrypt, Blue Team, Volatility, Wireshark]
 ---
 
