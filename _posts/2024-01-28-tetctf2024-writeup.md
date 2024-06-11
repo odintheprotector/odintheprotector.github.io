@@ -2,7 +2,7 @@
 layout: post
 title: TetCTF 2024 - Writeup
 description: All challenges I solved
-tags: [Writeup, Command and Control, Word, Macros, Forensic]
+tags: [Writeup, Command and Control, Word, Macros, Forensic, Blue Team, CTFtime]
 ---
 Hi everyone, just a few day more, we will deep in Tet holiday, and each year, TetCTF will celebrate a competition for all students and people who're interested in Cyber Security. This is the first time
 I participated this CTF because I always thought it's very hard and it's not for me. But after joining and experiencing, I realised that I was wrong 😊. So let's start!
