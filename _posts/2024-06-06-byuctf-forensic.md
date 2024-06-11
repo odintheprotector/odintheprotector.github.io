@@ -2,7 +2,7 @@
 layout: post
 title: BYUCTF 2024 - Forensic 
 description: All solved forensic challenges
-tags: [BYUCTF, Writeup, Forensic, DFIR]
+tags: [BYUCTF, Writeup, Forensic, DFIR, CTFtime]
 ---
 
 Hi everyone, I just joined BYUCTF two days ago and till now I feel very happy because I solved 5/6 forensic challenges here. Below is my writeup, let's go: 
