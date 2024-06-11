@@ -2,7 +2,7 @@
 layout: post
 title: WannaGame - Thang Ban Gui 
 description: Browser history forensic
-tags: [WannaGame, Writeup, Powershell, Wireshark ]
+tags: [WannaGame, Writeup, Powershell, Wireshark, Blue Team]
 ---
 
 Link challenge: [Click here to get the link](https://drive.google.com/drive/folders/1vlr_l_4v-KXZORsj5HPfCIVGfpa_kD4x)
