@@ -2,7 +2,7 @@
 layout: post
 title: TheCyberCoopCTF - Forensic 
 description: All forensic challenges I solved
-tags: [CTFtime, TheCyberCoopCTF, Writeup]
+tags: [CTFtime, TheCyberCoopCTF, Writeup, Blue Team]
 ---
 Hi everyone, a few day ago I participated in a CTF competition named as a title, and I solved so many challenges in it. And now I want to write my solution here to share my knowledge and sometime I can look back. So let's start!
 
