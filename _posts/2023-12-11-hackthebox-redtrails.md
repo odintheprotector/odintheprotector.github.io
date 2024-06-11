@@ -2,7 +2,7 @@
 layout: post
 title: HackTheBox - RedTrails
 description: Attack in Redis server
-tags: [HackTheBox, Writeup, Redis, AES Decrypt, Powershell]
+tags: [HackTheBox, Writeup, Redis, AES Decrypt, Powershell, Blue Team]
 ---
 CHALLENGE DESCRIPTION
 ```
