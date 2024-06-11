@@ -2,7 +2,7 @@
 layout: post
 title: HackTheBox - Diagnostic
 description: Command and Control server problem
-tags: [HackTheBox, Writeup, Command and Control, Virustotal, Powershell]
+tags: [HackTheBox, Writeup, Command and Control, Virustotal, Powershell, Blue Team]
 ---
 CHALLENGE DESCRIPTION:
 
