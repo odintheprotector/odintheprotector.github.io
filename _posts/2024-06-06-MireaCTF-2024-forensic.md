@@ -2,7 +2,7 @@
 layout: post
 title: MireaCTF 2024 - Forensic
 description: All solved forensic challenges
-tags: [MireaCTF, Forensic, Writeup, DFIR]
+tags: [MireaCTF, Forensic, Writeup, DFIR, CTFtime]
 ---
 
 Hi, it's me Odin. Yesterday me and my team World Wide Flag have a competition in MireaCTF and I'm very happy that we got 3rd place. Moreover, I solved all forensic challenges, and now it's writeup for them.
