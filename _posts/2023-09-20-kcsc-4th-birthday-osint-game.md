@@ -2,7 +2,7 @@
 layout: post
 title: KCSC - 4th Birthday OSINT game
 description: OSINT problem - 4th KCSC Birthday 
-tags: [KCSC, Writeup, OSINT]
+tags: [KCSC, Writeup, OSINT, Blue Team]
 ---
 
 Hi everyone, just a few day ago, KCSC created a OSINT challenge because of its 4th birthday. Fortunately, I solved this challenge, and today
