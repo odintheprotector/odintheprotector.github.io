@@ -2,7 +2,7 @@
 layout: post
 title: HackTheBox - Illumination
 description: Github problem
-tags: [HackTheBox, Writeup, Git log]
+tags: [HackTheBox, Writeup, Git log, Blue Team]
 ---
 
 CHALLENGE DESCRIPTION
