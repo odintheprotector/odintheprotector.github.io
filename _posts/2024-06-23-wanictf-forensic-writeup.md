@@ -1,3 +1,4 @@
+---
 layout: post
 title: WaniCTF 2024 - Forensic 
 description: All solved forensic challenges
