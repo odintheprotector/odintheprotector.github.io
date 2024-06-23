@@ -43,7 +43,7 @@ I will open it in File Manager to avoid wasting time. Search a bit and I found s
 
 ![image](https://github.com/odintheprotector/odintheprotector.github.io/assets/75618225/e136a1be-4d99-4dc5-a7d6-aa5019b48d99)
 
-**Flag: FLAG{RDP_is_useful_yipeee}***
+**Flag: FLAG{RDP_is_useful_yipeee}**
 
 ### I_wanna_be_a_streamer
 I have to say this must be the best challenge when I solved forensic. Go with me to see how interesting it is. In this challenge we had a pcap file, let's open it in Wireshark and analyse it:
@@ -57,7 +57,7 @@ There're so many RTP and RTSP packets, these packets are very common in transfer
 RTSP and HTTP functions are the same, However, RTSP depends on a dedicated server for streaming and relies on RTP to transmit multimedia content. Therefore, this protocol does not support content encryption or retransmission of lost packets. That means we can extract all the datas that transfered through Internet.
 
 Read challenge carefully, you can see they noted about H.264 video encoding, after searching I found [plugins](https://github.com/volvet/h264extractor) for extracting H.264 data inside RTP packets. And now it's how to extract data step-by-step:
-- Copy plugins to **/home/<user>/.local/lib/wireshark/plugins/**
+- Copy plugins to /home/<user>/.local/lib/wireshark/plugins/
 - Restart Wireshark to load plugins
 - Go to Edit -> Preference -> Protocol -> H.264, set RTP payload type to 96 (if you look packets carefully you can see that it's RTP-Type-96)
 - Go to Tools -> Extract h264 stream from RTP
