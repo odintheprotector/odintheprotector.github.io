@@ -101,7 +101,9 @@ You can see that there're two files **read_this_as_admin** in Destop and Downloa
 
 ![image](https://github.com/odintheprotector/odintheprotector.github.io/assets/75618225/485e8e0f-8f82-4278-b36d-91b1cf3554aa)
 
-You will see that when you combine it together, you will get a link that downloaded a file named **chall_mem_search.exe**, created **WaniTemp** directory inside **Temp** directory, saved **chall_mem_search.exe** to **msedge.exe** (that's why you got msedge.exe process at first). Look at the link carefully, you will see **B64_dec'+'ode_RkxBR3tEYXl1bV90aGlzX'+'2lzX3NlY3JldF9maWxlfQ%3'+'D%3D**, you can see easily that they wanted us to decode this string, decode it and you will get the flag:
+You will see that when you combine it together, you will get a link that downloaded a file named **chall_mem_search.exe**, created **WaniTemp** directory inside **Temp** directory, saved **chall_mem_search.exe** to **msedge.exe** (that's why you got **msedge.exe** process at first).
+
+Look at the link carefully, you will see **B64_dec'+'ode_RkxBR3tEYXl1bV90aGlzX'+'2lzX3NlY3JldF9maWxlfQ%3'+'D%3D**, you can know easily that they wanted us to decode this string, decode it and you will get the flag:
 
 ![image](https://github.com/odintheprotector/odintheprotector.github.io/assets/75618225/49a1a9d5-2eab-476d-8a98-22c821b01df3)
 
