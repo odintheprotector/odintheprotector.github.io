@@ -91,7 +91,7 @@ You can see that there're two files **read_this_as_admin** in Desktop and Downlo
 
 ![image](https://github.com/odintheprotector/odintheprotector.github.io/assets/75618225/e32af988-f39d-4bcf-98d2-6a074acc0238)
 
-- In **read_this_as_admin.download** it will download .lnk file in **192.168.0.16:8282**:
+- In **read_this_as_admin.download** it will download .lnk file from **192.168.0.16:8282**:
 
 ![image](https://github.com/odintheprotector/odintheprotector.github.io/assets/75618225/7f31f01b-1fb7-4704-b9bb-c4610f835c90)
 
