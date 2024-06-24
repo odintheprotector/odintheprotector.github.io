@@ -2,7 +2,7 @@
 layout: post
 title: WaniCTF 2024 - Forensic 
 description: All solved forensic challenges
-tags: [WaniCTF, Writeup, Forensic, DFIR, CTFtime]
+tags: [WaniCTF, Writeup, Forensic, DFIR, CTFtime, Blue Team, Memory Forensic, Network Forensic]
 ---
 
 Hi everyone, this time I joined WaniCTF 2024 and fortunately we got 2nd place, this is a big victory for us. Now it's my writeup for forensic category. Let's go! 
