@@ -83,7 +83,7 @@ If you look carefully you can guess easily that it executed a command that was r
 
 You can see that hacker created **admin** account with password is **5up3r-5ecur3**, because it's from notepad and as I mentioned before, DLLs was loaded to notepad.exe, so that means DLLs created a new account, and we found all parts of the flag!
 
-**Flag: DUCTF{monkey.doc.ps1_emu.dll-kiwi.dll_5up3r-5ecur3}**
+**Flag: DUCTF{monkey.doc.ps1_Invoke-ReflectivePEInjection_emu.dll-kiwi.dll_5up3r-5ecur3}**
 
 ### Macro Magic: 
 
