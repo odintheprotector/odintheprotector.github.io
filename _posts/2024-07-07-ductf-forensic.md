@@ -5,8 +5,7 @@ description: All solved forensic challenges
 tags: [DUCTF, Writeup, Forensic, DFIR, CTFtime, Blue Team, Memory Forensic, Network Forensic]
 ---
 
-Hi everyone, this time our team joined DUCTF 2024 and we got 26th place. This time I was busy because of preparing for the exam so I could not solve it with my teammates. 
-However, I tried to solve some challenges by myself and fortunately I solved them. And now it's my writeup for all forensic challenges that I solved!. Let's go!
+Hi everyone, this time our team joined DUCTF 2024 and we got 27th place. This time I was busy because of preparing for the exam so I could not solve it with my teammates. However, I tried to solve some challenges by myself and fortunately I solved them. And now it's my writeup for all forensic challenges that I solved!. Let's go!
 
 ### Baby's First Forensics
 They gave us a pcap file and we need to find out which tool attacker used to exploit our server. If you tried to learn Red team, you would know that when you used some tools to attack, profile of that tool would be stored in User-Agent. 
