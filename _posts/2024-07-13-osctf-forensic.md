@@ -111,13 +111,13 @@ I extracted it to my machine and use **ThunderBird** to open the file:
 
 You can see that there's a zip file and the password is **CreditsCardForFree**. Now let's open this file and see what inside:
 
-![image](https://github.com/user-attachments/assets/5674e146-106b-45a4-a6cf-bc48bac6b8fe)
+![image](https://github.com/user-attachments/assets/d8f612fe-6c93-4f31-bbb5-fc6826393bcd)
 
 There's a xlsm file, and as usual, I always check VBA code inside by using **olevba**:
 
 ![image](https://github.com/user-attachments/assets/96207dd2-518a-46f4-8686-3f47352d483f)
 
-You can see that there's a VBA code and it's obfucated, and we don't any choice except deobfucate it by your hand or you can read code by Ctrl+F+<the_name_of_func>. After this I found that function will process a string looks like URL:
+You can see that there's a VBA code and it's obfucated, and we don't any choice except deobfucate it by your hand or you can read code by **Ctrl+F+the_name_of_func**. After this I found that function will process a string looks like URL:
 
 ![image](https://github.com/user-attachments/assets/9393de57-7d6e-4f90-be80-005f8c8a3f62)
 
