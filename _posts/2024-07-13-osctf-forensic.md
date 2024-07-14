@@ -174,7 +174,7 @@ I got a link again, opened it and I got the flag:
 
 **Flag: OSCTF{JU5t_n0rmal_eXE1_f113_w1th_C2_1n51De}**
 
-Thank you for watching, hope you enjoy this. I solved other challenges but I still love forensic so I just wrote writeup for it 😂😂😂. See you in other CTFS, bye!!!
+Thank you for watching, hope you enjoy this. I solved other challenges but I still love forensic so I just wrote writeup for it 😂😂😂. See you in other CTFs, bye!!!
 
 
 
