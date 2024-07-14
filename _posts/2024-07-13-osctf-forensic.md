@@ -123,7 +123,7 @@ You can see that there's a VBA code and it's obfucated, and we don't any choice 
 
 ![image](https://github.com/user-attachments/assets/ea01c679-d2e7-451f-a665-0435bc78b875)
 
-From here I can realise that our function are trying to decode that string. based on their function, I rewrote a Python script for automatic decoding:
+From here I can realise that our function are trying to decode that string. Based on their function, I rewrote a Python script for automatic decoding:
 
 ```
 def decode_string(encoded_string, decode_table, encoded_substitution):
