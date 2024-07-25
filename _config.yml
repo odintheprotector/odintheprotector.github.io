@@ -32,6 +32,9 @@ dash:
     - url: https://github.com/odintheprotector
       icon: github-square
       color: purple
+    - url: https://discordapp.com/users/750547477085814792
+      icon: discord-square
+      color: pink
 
   # wether the author box should be displayed
   show_author: true
