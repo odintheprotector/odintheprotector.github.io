@@ -3,7 +3,8 @@ author: Odin
 description: > # this means to ignore newlines until "show_exerpts:"
   An incident responder who's seeking opportunities to work in technology company!
   <br/>Operator in Cookie Han Hoan
-  <br/>Admin in Cyber Mely 
+  <br/>Admin in Cyber Mely, CyberSpace
+  <br/>Forensic at @World Wide Flags
 show_excerpts: false # set to true to show excerpts on the homepage
 
 paginate: 5
@@ -32,9 +33,6 @@ dash:
     - url: https://github.com/odintheprotector
       icon: github-square
       color: purple
-    - url: https://discordapp.com/users/750547477085814792
-      icon: discord-square
-      color: pink
 
   # wether the author box should be displayed
   show_author: true
