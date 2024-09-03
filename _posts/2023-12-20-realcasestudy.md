@@ -2,7 +2,7 @@
 layout: post
 title: A real case study relates to forensic
 description: Analyse a phishing case
-tags: [Real case, Forensic, Virustotal, Command and Control, JavaScript, Blue Team]
+tags: [Real Case, Forensic, Virustotal, Command and Control, JavaScript, Blue Team]
 ---
 This is a new kind of post in my blog, it concentrates on real case about forensic and how I investigate it. I'm sure that it can help you know more about attacking techniques and ways to detect it. OK let's start!
 First of all, a man sent me a link that's the main reason for this post:<br>
