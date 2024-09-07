@@ -1,12 +1,8 @@
 source "https://rubygems.org"
 
-gem 'jekyll-dash', '~> 1'
 gem "liquid-md5"
 gem "jekyll-tagging"
 gem "kramdown-parser-gfm"
+gem 'bundler', '>= 2.2.28'
 
-#gemspec
-
-gem "webrick", "~> 1.8"
-gem 'jekyll-livereload'
-gem 'thin' 
+gemspec
