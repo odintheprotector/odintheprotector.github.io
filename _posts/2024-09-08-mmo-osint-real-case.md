@@ -127,8 +127,7 @@ After filtered this was all his available social medias:
 -	https://www.smule.com/ukesemeseke 
 -	https://www.youtube.com/@jessesharp44 
 
-Above is my process when searching for information about this website. This is a very good case study for me because I can apply all the knowledge I have learned while playing CTF. Thank you my dear brother 
-for giving me the opportunity to experience real problems, I really learned a lot from this case study. Thank you for reading my articles, if you have any questions, please contact me on Facebook.
+Above is my process when searching for information about this website. This is a very good case study for me because I can apply all the knowledge I have learned while playing CTF. Thank you my dear brother, **Prismo**, for giving me the opportunity to experience real problems. I really learned a lot from this case study. Thank you for reading my articles, if you have any questions, please contact me on Facebook.
 
 See you in the next articles in the future. Bye!!! 🫀🫀🫀
 
