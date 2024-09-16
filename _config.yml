@@ -50,7 +50,7 @@ dash:
   avatar_path: /assets/avatar.jpg
 
 # Build settings
-remote-theme: jekyll-dash
+theme: jekyll-dash
 
 plugins:
  - jekyll-feed
