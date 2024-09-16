@@ -47,7 +47,7 @@ dash:
   #avatar_source: github
   #github_username: bitbrain
   avatar_source: local
-  avatar_path: /assets/avatar.jpg
+  avatar_path: /assets/odin.gif
 
 # Build settings
 remote-theme: jekyll-dash
