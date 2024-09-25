@@ -2,10 +2,10 @@ name: Build branch
 
 on:
   push:
-    branches-ignore:
+    branches:
       - 1.*
       - main
-    tags-ignore:
+    tags:
       - v1.*
       - v2.*
 
