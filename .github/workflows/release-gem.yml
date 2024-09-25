@@ -3,16 +3,28 @@ name: Release Gem
 on:
   push:
     tags:
-      - v1.*
-      - v2.*
+      - 'v1.*'
+      - 'v2.*'
 
 jobs:
   release-gem:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '2.7' # Adjust the Ruby version as needed
+
+      - name: Install dependencies
+        run: bundle install
+
       - name: 🚀 Release gem
         uses: dawidd6/action-publish-gem@v1
         with:
-          github_token: ${{secrets.GH_CREDENTIALS}}
-          api_key: ${{secrets.RUBYGEMS_API_KEY}}
+          rubygems_api_key: ${{ secrets.RUBYGEMS_API_KEY }}
+
+      - name: Post Release Cleanup (Optional)
+        run: echo "Release complete."
