@@ -17,6 +17,7 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '2.7' # Adjust the Ruby version as needed
+          cache-bundle: true   # Cache the bundle to speed up installs
 
       - name: Install dependencies
         run: bundle install
@@ -26,5 +27,5 @@ jobs:
         with:
           rubygems_api_key: ${{ secrets.RUBYGEMS_API_KEY }}
 
-      - name: Post Release Cleanup (Optional)
+      - name: Post Release Cleanup
         run: echo "Release complete."
