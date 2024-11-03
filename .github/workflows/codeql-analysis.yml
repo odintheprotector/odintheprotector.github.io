@@ -27,11 +27,11 @@ jobs:
         uses: actions/checkout@v3  # Latest version
 
       - name: Initialize CodeQL
-        uses: github/codeql-action/init@v2  # Latest version
+        uses: github/codeql-action/init@v3  # Latest version
         with:
           languages: ${{ matrix.language }}
           # Uncomment to specify custom queries
           # queries: ./path/to/local/query, your-org/your-repo/queries@main
 
       - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v2  # Latest version
+        uses: github/codeql-action/analyze@v3  # Latest version
