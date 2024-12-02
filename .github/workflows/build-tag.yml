@@ -17,11 +17,11 @@ jobs:
         ruby-version: ['2.6', '2.7', '3.0']
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3  # Update to the latest version of checkout
     - name: 💎 Set up Ruby
-      uses: ruby/setup-ruby@v1  # Use the latest stable version instead of a specific commit
+      uses: ruby/setup-ruby@v1.2  # Update to the latest stable version of ruby/setup-ruby
       with:
         ruby-version: ${{ matrix.ruby-version }}
-        bundler-cache: true
+        bundler-cache: true  # Enable bundler cache for faster builds
     - name: 🧪 Run tests
       run: bundle exec rake
