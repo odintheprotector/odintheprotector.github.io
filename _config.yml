@@ -1,8 +1,9 @@
 title: Odin
 author: Odin
 description: > # this means to ignore newlines until "show_exerpts:"
-  Cyber Threat Intelligence Analyst at @ActiveFence
+  CTI Analyst at @ActiveFence
   <br/>Forensic at @World Wide Flags
+  <br/>Operator at @Cookie Han Hoan
 show_excerpts: false # set to true to show excerpts on the homepage
 
 paginate: 5
