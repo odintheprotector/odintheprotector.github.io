@@ -19,9 +19,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: 💎 Set up Ruby
-      uses: ruby/setup-ruby@473e4d8fe5dd94ee328fdfca9f8c9c7afc9dae5e
+      uses: ruby/setup-ruby@v1  # Use the latest stable version instead of a specific commit
       with:
         ruby-version: ${{ matrix.ruby-version }}
         bundler-cache: true
-    - name: 🧪 Run tests 
+    - name: 🧪 Run tests
       run: bundle exec rake
