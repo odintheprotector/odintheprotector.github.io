@@ -3,11 +3,11 @@ name: Build branch
 on:
   push:
     branches-ignore:
-      - 1.*
-      - main
+      - '1.*'
+      - 'main'
     tags-ignore:
-      - v1.*
-      - v2.*
+      - 'v1.*'
+      - 'v2.*'
 
 jobs:
   build-branch:
@@ -17,11 +17,17 @@ jobs:
         ruby-version: ['2.6', '2.7', '3.0']
 
     steps:
-    - uses: actions/checkout@v3  # Update to the latest version of checkout
+    - name: Checkout code
+      uses: actions/checkout@v3  # Ensure the latest version of checkout action is used
+
     - name: 💎 Set up Ruby
-      uses: ruby/setup-ruby@v1.2  # Update to the latest stable version of ruby/setup-ruby
+      uses: ruby/setup-ruby@v1.2  # Ensure the latest stable version of ruby/setup-ruby is used
       with:
         ruby-version: ${{ matrix.ruby-version }}
-        bundler-cache: true  # Enable bundler cache for faster builds
+        bundler-cache: true  # Enable bundler cache to speed up subsequent builds
+
+    - name: Install dependencies
+      run: bundle install  # Ensure that dependencies are installed before running tests
+
     - name: 🧪 Run tests
-      run: bundle exec rake
+      run: bundle exec rake  # Run your tests (assuming you're using Rake for tests)
