@@ -20,19 +20,19 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: ['javascript']
+        language: ['javascript', 'python', 'ruby']  # Add more languages if needed
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3  # Latest version
-        
+        uses: actions/checkout@v3  # Ensure the latest version of the checkout action is used
+
       - name: Initialize CodeQL
-        uses: github/codeql-action/init@v3  # Latest version
+        uses: github/codeql-action/init@v3  # Ensure the latest version of CodeQL action
         with:
           languages: ${{ matrix.language }}
-          node-version: 20.x
-          # Uncomment to specify custom queries
+          node-version: 20.x  # Use the latest supported Node.js version
+          # Uncomment and adjust if using custom queries
           # queries: ./path/to/local/query, your-org/your-repo/queries@main
 
       - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v3  # Latest version
+        uses: github/codeql-action/analyze@v3  # Ensure the latest version of CodeQL action
