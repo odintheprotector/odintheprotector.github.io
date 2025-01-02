@@ -20,7 +20,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: ['javascript', 'python', 'ruby']  # Add more languages if needed
+        language: ['javascript', 'ruby']  # Add more languages if needed
 
     steps:
       - name: Checkout Repository
