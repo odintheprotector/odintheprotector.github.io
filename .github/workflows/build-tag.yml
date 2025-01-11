@@ -1,4 +1,4 @@
-name: Build tag
+name: Build branch
 on:
   push:
     branches-ignore:
