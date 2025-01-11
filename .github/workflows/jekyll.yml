@@ -24,6 +24,7 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
+          ruby-version: '3.2.3'  # Specify the Ruby version here 
           bundler-cache: true
           cache-version: 0  # Increment this to invalidate the cache
       - name: Setup Pages
