@@ -1,0 +1,42 @@
+name: Build Tag
+
+on:
+  push:
+    branches:
+      - main
+      - 1.*
+
+jobs:
+  build-tag:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🎒 checkout repository
+        uses: actions/checkout@v2
+      - name: 💎 Extract gemspec info
+        id: gemspec_fetch
+        uses: bitbrain/gemspec-fetch@1.0.0
+        with:
+          specfile: jekyll-dash.gemspec
+      - name: 🕵️‍♂️ investigate if tag exists
+        uses: mukunku/tag-exists-action@v1.0.0
+        id: tag-check
+        with: 
+          tag: 'v${{ steps.gemspec_fetch.outputs.version }}'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_CREDENTIALS }}
+      - name: 🔖Build tag
+        if: ${{ steps.tag-check.outputs.exists == 'false' }}
+        id: tag_version
+        uses: mathieudutour/github-tag-action@v5.6
+        with:
+          github_token: ${{ secrets.GH_CREDENTIALS }}
+          default_bump: false
+          custom_tag:  ${{ steps.gemspec_fetch.outputs.version }}
+          tag_prefix: v
+      - name: 📙 Github release
+        if: ${{ steps.tag-check.outputs.exists == 'false' }}
+        uses: ncipollo/release-action@v1
+        with:
+          tag: ${{ steps.tag_version.outputs.new_tag }}
+          name: Release ${{ steps.tag_version.outputs.new_tag }}
+          body: ${{ steps.tag_version.outputs.changelog }}
