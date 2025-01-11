@@ -1,35 +1,40 @@
-name: Build branch
+name: Build and Deploy Tag
+
 on:
   push:
-    branches-ignore:
-      - '1.*'
-      - 'main'
-    tags-ignore:
-      - 'v1.*'
-      - 'v2.*'
+    tags:
+      - 'v*'  # Trigger on version tags like v1.0, v2.1, etc.
 
 jobs:
-  build-branch:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        ruby-version: ['2.6', '2.7', '3.0', '3.1', '3.2']  # Including Ruby 3.2
+  build:
+    runs-on: ubuntu-24.04-x64  # Self-hosted runner with Ubuntu 24.04
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3  # Ensure the latest version of checkout action is used
+    - name: Checkout repository
+      uses: actions/checkout@v3
 
-    - name: 💎 Set up Ruby
-      uses: ruby/setup-ruby@v2  # Using the latest version of ruby/setup-ruby
-      with:
-        ruby-version: ${{ matrix.ruby-version }}
-        bundler-cache: true  # Enable bundler cache to speed up subsequent builds
+    - name: Set up Ruby
+      run: |
+        # Install ruby-build and required dependencies
+        sudo apt-get update
+        sudo apt-get install -y build-essential libssl-dev libreadline-dev zlib1g-dev
+        git clone https://github.com/rbenv/ruby-build.git /tmp/ruby-build
+        export PATH="/tmp/ruby-build/bin:$PATH"
+        
+        # Install Ruby version 3.1.4
+        ruby-build 3.1.4 /opt/hostedtoolcache/Ruby/3.1.4/x64
 
-    - name: Install Bundler
-      run: gem install bundler  # Ensure Bundler is installed for Ruby projects
+        # Mark Ruby installation as complete
+        touch /opt/hostedtoolcache/Ruby/3.1.4/x64.complete
+        
+    - name: Set up Bundler
+      run: gem install bundler
 
     - name: Install dependencies
-      run: bundle install  # Ensure that dependencies are installed before running tests
+      run: |
+        bundle install --jobs 4 --retry 3
 
-    - name: 🧪 Run tests
-      run: bundle exec rake  # Run your tests (assuming you're using Rake for tests)
+    - name: Run tests
+      run: bundle exec rspec
+
+    # Additional deployment steps (if any)
