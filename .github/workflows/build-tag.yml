@@ -1,5 +1,4 @@
-name: Build branch
-
+name: Build tag
 on:
   push:
     branches-ignore:
