@@ -45,8 +45,8 @@ and **learning by yourself**, that's the most stable!
 
 For instance, you play a challenge, you cannot solve it then you look for its solution, you will base on that solution and try to complete the challenge by yourself, 
 then you will look for what is the signature of that challenge: tool, tactic,... then you should note them somewhere such as **Notepad**, **HackMD**, **Obsidian**,... 
-then you repeat it many times for many challenges. I'm sure that you will see the difference inside you! When you do much enough, you will have the reflexes: "Oh in this 
-situation I should use this tool, code this script...".
+then you repeat it many times for many challenges. I'm sure that you will see the difference inside you! When you do much enough, you will have the reflexes: **"Oh in this 
+situation I should use this tool, code this script..."**.
 
 How about working? In my opinion, CTF displays around 90% how you will work in Cyber Security, remember it's just 90%, other 10% is **company's policies** and how you deal 
 with **real cases**. In CTF, authors can warn you about: "Oh this sample is malicious and you should run it on VM" but when you start working, you must know exactly how your samples 
@@ -54,7 +54,7 @@ are, how your targets are and how to resolve them without leaving any damages. I
 rule. For instance, you're testing a malware to write a report for your company, if you run it on your real machine accidentally, it will affect not only your computer 
 but also others. Depending on the severity of the problem you may be warned or at worst fired and even held legally responsible. Or if you are working on OSINT, the key for 
 success is you investigate something without detected by cyber crimes. You have to do everything to hide your identity or it's very dangerous that threat actors will delete 
-all fingerprints and worse they can k*ll you if they find you! 
+all fingerprints and worse they can k*ll you if they find you! So to work well, you must remove some your bad habits like **"Oh I'm running this sample on my real machine because it's convenient"** or **Oh I found this information by using my real machine and I'm confident that they cannot find me!**, those will ruin you day by day and you will regret if the baddest things happen and you must **obey all rule of company**. Combine them with your CTF skills fluently, I believe that you will have a good position in their eyes! 
 
 ## C. Conclusion
 
