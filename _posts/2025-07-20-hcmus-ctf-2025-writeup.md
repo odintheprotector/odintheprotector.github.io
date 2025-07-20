@@ -8,7 +8,7 @@ tags: [HCMUS, Writeup, Command and Control, Blue Team, Network Forensic, Disk Fo
 Hi guys, I just joined **HCMUS CTF 2025** with my team: **L3_u3th** and we got 30th rank, although it's not the good rank, but we tried our best, so we are chill guys. This is 
 my writeup for some challenges in Forensic. Let's go! 
 
-<img width="1887" height="754" alt="image" src="https://github.com/user-attachments/assets/9f82cdb2-0d3b-4c2d-ae41-d1487262ae48" />
+<img width="887" height="375" alt="image" src="https://github.com/user-attachments/assets/8797a6aa-bc40-4d4d-9067-befbed0bf88e" />
 
 ### TLS Challenge
 
@@ -33,7 +33,7 @@ For this challenge we have another network capture file. I checked the file and 
 
 Basically we will extract all of them by going to File -> Export Objects -> SMB and we will save all of them to your own somewhere:
 
-<img width="1785" height="454" alt="image" src="https://github.com/user-attachments/assets/3d1ef901-3d8b-4550-a152-b15192ca17a8" />
+<img width="484" height="235" alt="image" src="https://github.com/user-attachments/assets/37fb6303-8d56-4611-a754-6a7c099598ba" />
 
 You can see that there are so many zip files, so I wrote a simple Python script for extracting automatically: 
 
@@ -88,7 +88,7 @@ print(f"All .txt files combined into: {combined_txt}")
 
 Then I searched on file and found the flag: 
 
-<img width="345" height="180" alt="image" src="https://github.com/user-attachments/assets/992dda75-2ade-4adf-bc35-2394a9b7c568" />
+<img width="600" height="349" alt="image" src="https://github.com/user-attachments/assets/ab53d6fb-8019-4025-a0cf-c261a67b91f3" />
 
 ### File Hidden
 
