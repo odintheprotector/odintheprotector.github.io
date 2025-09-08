@@ -2,7 +2,7 @@
 layout: post
 title: BlackHat MEA 2025 - Multiverse
 description: My writeup for a chalenge from BlackHat MEA 2025
-tags: [BlackHat MEA, Forensic, Writeup, Blue Team, Autopsy, rclone]
+tags: [BlackHat MEA 2025, Forensic, Writeup, Blue Team, Autopsy, rclone]
 ---
 
 Hi guys, I was known about BlackHat MEA 2025 from my brother from PTIT and since I did not register, my brother sent me sample in onder to solve. After solving this is 
