@@ -42,7 +42,7 @@ And in our case it will be like this:
 
 And when you have **rclone.conf** you can access cloud storage remotely, however in this challenge the connection was corrupted by somehow. My intended solution is 
 accessing cloud storage, investigate to find out whether there has any file or not, but after read other solutions I knew this is a guessy challenge 💀. OK so it will be 
-like this: the rclone password always be encrypted and to reveal the original password, it's so simple that we use this command: **rclone reveal <password>**:
+like this: the rclone password always be encrypted and to reveal the original password, it's so simple that we use this command: **rclone reveal**:
 
 ![image](https://github.com/user-attachments/assets/3617e444-7960-41e0-9200-a037635944c5)
 
