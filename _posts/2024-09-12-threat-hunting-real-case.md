@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Xeon JS Config Exploit - Threat Hunting Real Case
+title: Xeon JS Config Exploit - Threat Intelligence Real Case
 description: Kevin Xeon - a threat actor in a hacking group on Facebook, created payloads to steal data
-tags: [Real Case, Threat Hunting, OSINT, Reverse Engineering, Blue Team, Forensic]
+tags: [Real Case, Threat Intelligence, OSINT, Reverse Engineering, Blue Team, Forensic]
 ---
 
 Hi everyone, this time I receieved a real case about a threat actor, it's a great case for me because it needs both reversing and OSINT. Let's go and see how interesting it is!
