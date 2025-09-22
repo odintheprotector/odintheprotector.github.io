@@ -1,0 +1,38 @@
+name: CodeQL Analysis
+
+on:
+  push:
+    branches: [main, 1.x]
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: '38 7 * * 1'  # Every Monday at 07:38 UTC
+
+jobs:
+  analyze:
+    name: Analyze Code with CodeQL
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+
+    strategy:
+      fail-fast: false
+      matrix:
+        language: ['javascript', 'ruby']  # Add more languages if needed
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3  # Ensure the latest version of the checkout action is used
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3  # Ensure the latest version of CodeQL action
+        with:
+          languages: ${{ matrix.language }}
+          node-version: 20.x  # Use the latest supported Node.js version
+          # Uncomment and adjust if using custom queries
+          # queries: ./path/to/local/query, your-org/your-repo/queries@main
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v3  # Ensure the latest version of CodeQL action

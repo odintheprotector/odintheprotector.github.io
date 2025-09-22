@@ -1,0 +1,9 @@
+<div class="author-box">
+{% if site.dash.rtl %}
+<div class="description">{{ site.description }}</div>
+{%- include avatar.html -%}
+{% else %}
+{%- include avatar.html -%}
+<div class="description">{{ site.description }}</div>
+{% endif %}
+</div>
