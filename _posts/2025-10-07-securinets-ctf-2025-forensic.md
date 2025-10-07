@@ -2,7 +2,7 @@
 layout: post
 title: Securinets CTF 2025 - Forensic
 description: The solutions for all forensic challenges in this CTF
-tags: [Securinets, Writeup, Command and Control, Virustotal, Blue Team, Reverse Engineering, Disk Forensic, Network Forensic, Memory Forensic]
+tags: [Securinets, Writeup, Command and Control, Virustotal, Blue Team, Reverse Engineering, Disk Forensic, Network Forensic, Memory Forensic, Golang]
 ---
 
 Hi everyone, it's very happy that we gained the 16th rank in **Securinets CTF 2025**, and this is my writeup for all forensic challenges. Let's go
@@ -72,30 +72,30 @@ Q4: The email application used was **thunderbird**
 
 Q5 + Q6: You could find the both emails in Thunderbird profile: 
 
-<img width="1651" height="1019" alt="image" src="https://github.com/user-attachments/assets/cc68aa0e-fc96-47c4-ac01-d3df2d3e7be3" />
+![image](https://github.com/user-attachments/assets/cc68aa0e-fc96-47c4-ac01-d3df2d3e7be3)
 
 Q7 + Q8 + Q9 + Q10: I used Virustotal mainly, for the first 3 questions you could find them easily and for Q10 in Virustotal, the malware dropped a file which was 
 **id.txt** in **Public/Documents** and you could find it easily:
 
-<img width="1057" height="557" alt="image" src="https://github.com/user-attachments/assets/184f2dd0-d3a6-4d48-a7f6-711f2bca1ece" />
+![image](https://github.com/user-attachments/assets/184f2dd0-d3a6-4d48-a7f6-711f2bca1ece)
 
 Q10 + Q11: Virustotal contained information about Q10, and we could find the value of registry by parsing **NTUSER.dat**:
 
-<img width="1041" height="671" alt="image" src="https://github.com/user-attachments/assets/e99976b1-4a10-42bd-87b4-7aeb328035af" />
+![image](https://github.com/user-attachments/assets/e99976b1-4a10-42bd-87b4-7aeb328035af)
 
 For the last questions we must reverse the malware sample (actually not quite), open it on IDA and you can find that secret on main function:
 
-<img width="873" height="712" alt="image" src="https://github.com/user-attachments/assets/462458e1-f896-4e8a-b083-d7a2008dd064" />
+![image](https://github.com/user-attachments/assets/462458e1-f896-4e8a-b083-d7a2008dd064)
 
 ### Lost File
 
 We were given 2 samples: an AD1 file and a vmem file. First, I opened AD1 by FTK Imager: 
 
-<img width="1061" height="840" alt="image" src="https://github.com/user-attachments/assets/d03bf1ae-a50d-4040-88e2-dcc2a64ba4d4" />
+![image](https://github.com/user-attachments/assets/d03bf1ae-a50d-4040-88e2-dcc2a64ba4d4)
 
 And as the image you could see there are an executable file and encrypted file and that's our answer. I simple exported the exe file and analyzed on IDA Pro:
 
-<img width="1433" height="973" alt="image" src="https://github.com/user-attachments/assets/c1129ded-a061-46cb-b710-6a3ea8cd5901" />
+![image](https://github.com/user-attachments/assets/c1129ded-a061-46cb-b710-6a3ea8cd5901)
 
 This was the full disassembled code of main function: 
 
@@ -254,51 +254,51 @@ LABEL_18:
 
 First, this program would take the input user, find the computer name and if file exists, then jump to **LABEL_18**:
 
-<img width="565" height="252" alt="image" src="https://github.com/user-attachments/assets/d6377162-336b-422c-a550-8bea413a754d" />
+![image](https://github.com/user-attachments/assets/d6377162-336b-422c-a550-8bea413a754d)
 
-<img width="752" height="476" alt="image" src="https://github.com/user-attachments/assets/7f6c19c8-a42b-47fa-b54c-5f7c83c0709b" />
+![image](https://github.com/user-attachments/assets/7f6c19c8-a42b-47fa-b54c-5f7c83c0709b)
 
 You could find out that this label contained encryption method, and notice that they use **snprintf** which was used to write formatted string and in this case the 
 string contained 3 parts: **v31**, **Destination** and **Block**. **v31** is user input and **Destination** is computer name and **Block** is something we don't know. After 
 formatted string, the program would compute the SHA256 value and used as a key for AES256 encryption:
 
-<img width="735" height="515" alt="image" src="https://github.com/user-attachments/assets/eb87f742-d85e-4fb4-a35d-b3769ea911d8" />
+![image](https://github.com/user-attachments/assets/eb87f742-d85e-4fb4-a35d-b3769ea911d8)
 
 Now we will dig into vmem file, for v31 and Destination we could find them easily by using volatility plugins: **envars** and **consoles**:
 
-<img width="925" height="615" alt="image" src="https://github.com/user-attachments/assets/882e2aca-ac73-4f04-8dbb-97b2d6680e93" />
+![image](https://github.com/user-attachments/assets/882e2aca-ac73-4f04-8dbb-97b2d6680e93)
 
-<img width="866" height="575" alt="image" src="https://github.com/user-attachments/assets/e2cdf509-3e7b-45de-bebd-f21a441760b4" />
+![image](https://github.com/user-attachments/assets/e2cdf509-3e7b-45de-bebd-f21a441760b4)
 
 And for the last part, I searched on FTK Imager and I found a deleted file which contained a string "sigmadroid" so I knew that's the thing I needed. From here we can 
 recover the AES key and iv and decrypt easily: 
 
-<img width="1022" height="784" alt="image" src="https://github.com/user-attachments/assets/dc0789ac-2096-489f-b0d2-50e509c993b5" />
+![image](https://github.com/user-attachments/assets/dc0789ac-2096-489f-b0d2-50e509c993b5)
 
-<img width="1538" height="746" alt="image" src="https://github.com/user-attachments/assets/1983b860-c54e-4972-87fb-dd99fb5294c0" />
+![image](https://github.com/user-attachments/assets/1983b860-c54e-4972-87fb-dd99fb5294c0)
 
 ### Recovery
 
 We had 2 files: a pcapng file and a backup. First, I looked through the backup: 
 
-<img width="590" height="457" alt="image" src="https://github.com/user-attachments/assets/22cc82a0-1506-498a-b095-99eadf3f5a13" />
+![image](https://github.com/user-attachments/assets/22cc82a0-1506-498a-b095-99eadf3f5a13)
 
 When I opened files, I could not read since they were encrypted although their name looked normal:
 
-<img width="638" height="501" alt="image" src="https://github.com/user-attachments/assets/26f4b96e-8468-4687-9541-df49a4a682d5" />
+![image](https://github.com/user-attachments/assets/26f4b96e-8468-4687-9541-df49a4a682d5)
 
 From here I read content of powershell_history.txt for more information and I noticed a github repo:
 
-<img width="1171" height="392" alt="image" src="https://github.com/user-attachments/assets/0a7f13be-cece-4062-83d9-3ef02356b148" />
+![image](https://github.com/user-attachments/assets/0a7f13be-cece-4062-83d9-3ef02356b148)
 
 It looked so suspicious so I accessed this repo. Read app.py and this was result: 
 
-<img width="871" height="726" alt="image" src="https://github.com/user-attachments/assets/9032ff48-fd52-479f-b9d8-624d875c8259" />
+![image](https://github.com/user-attachments/assets/9032ff48-fd52-479f-b9d8-624d875c8259)
 
 I checked commit to see file history and I found many things interesting, especially DNS exfiltration which used domain **meow**. To confirm this information I opened 
 **Wireshark** and fortunately it's correct:
 
-<img width="1672" height="859" alt="image" src="https://github.com/user-attachments/assets/c560a652-8cf7-43a8-8ab7-afb5571b76bc" />
+![image](https://github.com/user-attachments/assets/c560a652-8cf7-43a8-8ab7-afb5571b76bc)
 
 When we solved, we found the dns6 commit contained the correct decryption method for this case, and I rewrote the script for decryption:
 
@@ -483,19 +483,19 @@ if __name__ == "__main__":
 
 I ran the code and got a packed executable file: 
 
-<img width="521" height="216" alt="image" src="https://github.com/user-attachments/assets/54ac1819-fc5c-48a6-841e-89cc6272ee6c" />
+![image](https://github.com/user-attachments/assets/54ac1819-fc5c-48a6-841e-89cc6272ee6c)
 
-<img width="1012" height="254" alt="image" src="https://github.com/user-attachments/assets/4d81efd5-6e0e-40da-81e9-4de0769a08e9" />
+![image](https://github.com/user-attachments/assets/4d81efd5-6e0e-40da-81e9-4de0769a08e9)
 
 Simply I unpacked it and used IDA Pro again: 
 
-<img width="650" height="383" alt="image" src="https://github.com/user-attachments/assets/3e825ee6-89c9-4703-9531-409249555e99" />
+![image](https://github.com/user-attachments/assets/3e825ee6-89c9-4703-9531-409249555e99)
 
-<img width="1144" height="752" alt="image" src="https://github.com/user-attachments/assets/c304d35a-bcc3-4a02-a1e9-44ff672713c2" />
+![image](https://github.com/user-attachments/assets/c304d35a-bcc3-4a02-a1e9-44ff672713c2)
 
 I searched and found the function for encrypting files:
 
-<img width="1136" height="838" alt="image" src="https://github.com/user-attachments/assets/476eab13-0688-4621-8f03-bb1278e3a095" />
+![image](https://github.com/user-attachments/assets/476eab13-0688-4621-8f03-bb1278e3a095)
 
 You could see that they used a simple XOR operation for encryption. But we need to know exactly how they implemented their encryption method. Next we will dig into 
 **sub_401460** which processed the **Filename** for something:
@@ -545,7 +545,7 @@ at a2.
 
 To know what 37 bytes string was, we just simple click on the variable and we can see the content:
 
-<img width="755" height="202" alt="image" src="https://github.com/user-attachments/assets/f2fde8dd-139d-4192-85fb-bb0b1396f464" />
+![image](https://github.com/user-attachments/assets/f2fde8dd-139d-4192-85fb-bb0b1396f464)
 
 Because filename was an important part of seeding process, giving correct filepath is very essential and just a small modification will change the seed. And fortunately 
 this function below gave me how the filepath looked like:
@@ -681,7 +681,7 @@ if __name__ == "__main__":
 
 Run with the filename and you got the flag:
 
-<img width="539" height="541" alt="decrypted_sillyflag" src="https://github.com/user-attachments/assets/72c7aa50-ceb4-40f8-b0cf-27e88323f0b5" />
+![image](https://github.com/user-attachments/assets/72c7aa50-ceb4-40f8-b0cf-27e88323f0b5)
 
 That's my writeup for all forensic challenges. Thank you for reading my blog, see you in the next post. Byeeee!!!
 
