@@ -2,7 +2,7 @@
 layout: post
 title: Vậy là lần cuối đi bên nhau...
 description: Ai rồi cũng sẽ khác... Cuộc sống không đợi một ai...
-tags: [Story]
+tags: [Story, Confide]
 ---
 _(This post I want to write for my Vietnamese friends who are helping me a lot in my career so you should use GG translator if you really want to read)_
 
@@ -21,7 +21,7 @@ Gọi là sau 9 tiếng chỉ ngồi, ăn và bấm máy tính thì lưng của 
 tiết mục ở đó, và rồi mình nhận ra: "Oh, thời gian đã trôi nhanh như vậy rồi sao,... có lẽ ngày ấy đến rồi..."
 
 Well, cái này thì có nhiều thứ để nói nè, mà thực ra mấy phần sau đấy phần nào cũng nhiều thứ để nói nhưng vì nó quá dài nên không thể nói hết được, đâm ra mình sẽ chỉ nói 
-về những gì nổi bật nhất. Và phần này mình xin phép được nói về: mình đã bén duyên với USTH như nào.<br>
+về những gì nổi bật nhất. Và phần này mình xin phép được nói về: **mình đã bén duyên với USTH như nào.**<br>
 Đến bây giờ khi một số em khóa dưới của tôi hỏi về việc tại sao tôi vào trường này thì well, lí do đơn giản thôi: mình trượt mấy nguyện vọng liền. Phải kể đến ba năm cấp 
 3 của mình, lúc đấy thì mình vẫn vô tư lắm vì điểm thi vào 10 khá là tốt và cũng khá là chủ quan nữa, nên đâm ra là cả 3 năm của mình nó không có đáng đề cập cho lắm. Mấy 
 lần một số giáo viên dọa là nếu điểm dưới 5 thì auto vào lớp tình thương của trường thì gọi là mình cũng rén, cũng gọi là ôn bài một tí đấy, và điểm của mình thì được 25.05, 
@@ -51,7 +51,7 @@ nhưng đó là trải nghiệm mà bọn mình không bao giờ quên, vì bọ
 ![image](https://github.com/user-attachments/assets/4c304f77-fb2f-4409-b5cb-d48f283b28a7)
 
 Và rồi cuộc đời cho mình bén duyên với team **World Wide Flags**, lúc đó mình đang tham gia dưới tư cách solo ở giải đấu **BITSCTF 2024** do **BITS Pilani, Goa Campus, India** đứng ra 
-tổ chức. Và mình may mắn lọt top 16, tuy không có giải gì nhưng đó là lần đầu tiên mình giải được trọn vẹn toàn bộ Forensic challenges, điều mà mình hằng mong ước lúc đó. 
+tổ chức. Và mình may mắn lọt top 19, tuy không có giải gì nhưng đó là lần đầu tiên mình giải được trọn vẹn toàn bộ Forensic challenges, điều mà mình hằng mong ước lúc đó. 
 
 ![image](https://github.com/user-attachments/assets/7861df2a-02f0-4461-bf03-65e2c06d64fb)
 
@@ -85,7 +85,7 @@ mãi mới ra, và cả những thất bại đã dạy mình trưởng thành. 
 giờ, nhưng mình vẫn sẽ dõi theo, vẫn sẽ vui khi thấy đàn em tỏa sáng, vẫn sẽ hào hứng mỗi lần cộng đồng lớn mạnh hơn, và vẫn sẽ tự hào vì mình từng là một phần nhỏ 
 trong hành trình ấy. 
 
-11:27 PM | 22/11/2025 - Thank you for everything 💙
+Thank you for everything 💙
 
 
 
